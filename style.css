@@ -14,7 +14,7 @@ body{
    margin: auto;
 }
 .topbar{
-    background-color: #2C3E50;
+    background-color: #2EA6D5;
 }
 .topbar-column{
     height: 50px;
@@ -53,7 +53,7 @@ body{
     padding: 16px 15px 16px 15px;
 }
 .top-menu ul li a:hover{
-    background-color: black;
+    color: white;
    
 }
 
@@ -61,7 +61,7 @@ body{
 .top-menu ul ul{
     display: none;
     position: absolute;
-    background-color: #EEEEEE;
+    background-color: #e3edf3;
 }
 
 .top-menu li:hover ul{
@@ -77,7 +77,7 @@ body{
    color: black;
 }
 .top-menu li:hover ul li a:hover{
-    background-color: #2880E3;
+    background-color: #2EA6D5;
     color: white;
  }
  
@@ -97,9 +97,9 @@ body{
     padding: 5px 10px 5px 10px;
     font-weight: bold;
 }
-.btn.btn-sm.btn-orange{
-    background-color: #E45D25;
-    color: white;
+.btn.btn-sm.btn-primary{
+    background-color: white;
+    color: black;
 }
 i.icon-sm{
     font-size: 15px;
