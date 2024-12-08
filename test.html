@@ -44,22 +44,58 @@
         </div>
     </div>
     
-    <div class="hero">
-        <div class="container">
-                <div class="content-hero">
-                    <h1 class="text text-lg">Coba tes kepribadian yang paling terkenal di dunia.<br> <strong>Hanya 60 detik</strong></h1>
-        
-                    <a href="test.html" class="btn btn-md btn-secondary ">Mulai test &nbsp; <i class="fa fa-play icon-sm" aria-hidden="true"></i></a>
-                    <p class ="hero-tagline">Dapatkan hasilnya secepatnya <strong>Tidak membutuhkan pendaftaran</strong>.</p>
-
-                </div>
-        </div>
-    </div>
     <div class="main">
-        <div class="container">
-            <div class="content-main">
-                <p class ="content-main"><strong>iPersonic dikembangkan oleh psikolog.  </strong>Felicitas Heyne, pengembang dan pendiri tes kepribadian iPersonic adalah psikolog terkenal dan penulis buku. Beliau adalah anggota afiliasi internasional American Psychological Association (APA).</p>
-                <a href="test.html" class="btn btn-lg btn-secondary ">Mulai test &nbsp; <i class="fa fa-play icon-sm" aria-hidden="true"></i></a>
+        <div class="container container-test">
+            <div class="content-test">
+                <h1>Tes kepribadian</h1>
+                <!-- Tab Contents menu -->
+                <div class="tabs">
+                    <div class="tab active" data-tab="tab1">Tab 1</div>
+                    <div class="tab" data-tab="tab2">Tab 2</div>
+                    <div class="tab" data-tab="tab3">Tab 3</div>
+                </div>
+            
+                <!-- Tab Contents -->
+                <div class="tab-content active" id="tab1">
+                    <div class="tab-content tab-content-item ">
+                        <div class="tab-item">
+                            <p>Saya agak ramah, membuka hati dan saya suka berada bersama-sama dengan orang lain.</p>
+                            <a href="#" class="btn btn-md btn-secondary next-btn" data-target="#tab2">Hal ini berlaku buat saya &nbsp; <i class="fa fa-play icon-sm" aria-hidden="true"></i></a>
+
+                        </div>
+                        <div class="tab-item">
+                            <p>Saya membutuhkan banyak waktu untuk sendirian dan agak hati-hati untuk memulai hubungan baru.</p>
+                            <a href="#" class="btn btn-md btn-secondary next-btn "  data-target="#tab2">Hal ini berlaku buat saya &nbsp; <i class="fa fa-play icon-sm" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                   
+                </div>
+                <div class="tab-content" id="tab2">
+                    <div class="tab-content tab-content-item ">
+                        <div class="tab-item">
+                            <p>nomor 2.</p>
+                            <a href="#" class="btn btn-md btn-secondary next-btn" data-target="#tab3">Hal ini berlaku buat saya &nbsp; <i class="fa fa-play icon-sm" aria-hidden="true"></i></a>
+
+                        </div>
+                        <div class="tab-item">
+                            <p>nomor 2 kanan.</p>
+                            <a href="#" class="btn btn-md btn-secondary next-btn "  data-target="#tab3">Hal ini berlaku buat saya &nbsp; <i class="fa fa-play icon-sm" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-content" id="tab3">
+                    <div class="tab-content tab-content-item ">
+                        <div class="tab-item">
+                            <p>nomor 3 kiri.</p>
+                            <a href="#" class="btn btn-md btn-secondary next-btn" data-target="#tab3">Hal ini berlaku buat saya &nbsp; <i class="fa fa-play icon-sm" aria-hidden="true"></i></a>
+
+                        </div>
+                        <div class="tab-item">
+                            <p>nomor 3 kanan.</p>
+                            <a href="#" class="btn btn-md btn-secondary next-btn "  data-target="#tab3">Hal ini berlaku buat saya &nbsp; <i class="fa fa-play icon-sm" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>    
         <div class="footer">
@@ -82,5 +118,42 @@
          </div>
     </div>
    
+    <!-- tabjs -->
+    <script>
+                // Select all tabs and tab contents
+            const tabs = document.querySelectorAll('.tab');
+            const contents = document.querySelectorAll('.tab-content');
+
+            
+            function activateTab(tabId) {
+                
+                tabs.forEach(tab => tab.classList.remove('active'));
+                contents.forEach(content => content.classList.remove('active'));
+
+              
+                document.querySelector(`.tab[data-tab="${tabId}"]`).classList.add('active');
+                document.getElementById(tabId).classList.add('active');
+            }
+
+            // Handle tab clicks
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    //disable karna ga boleh langsung klik dari tab
+                    // const targetTab = tab.dataset.tab;
+                    // activateTab(targetTab); 
+                });
+            });
+
+            // Handle "Next" buttons
+            const nextLinks = document.querySelectorAll('.next-btn');
+            nextLinks.forEach(link => {
+                link.addEventListener('click', (event) => {
+                    event.preventDefault(); // Prevent default link behavior
+
+                    const targetTabId = link.getAttribute('data-target').substring(1); // Get the target ID (without the #)
+                    activateTab(targetTabId); // Activate the target tab
+                });
+            });
+    </script>
 </body>
 </html>
