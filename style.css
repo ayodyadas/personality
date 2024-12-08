@@ -19,15 +19,72 @@ body{
 .topbar-column{
     height: 50px;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 2fr;
 }
 .top-logo{
     display: flex;
     align-items: center;
 }
+.top-logo img{
+    width: 100px;
+}
+
+
+
 .top-menu{
+    
+    text-align: right;
 
 }
+.top-menu ul{
+    margin: 0px;
+    padding: 0px;
+    list-style-type: none;
+    position: relative;
+}
+.top-menu ul li{
+    display: inline-block;
+}
+.top-menu ul li a{
+    color: white;
+    text-decoration: none;
+    display: block;
+ 
+    padding: 16px 15px 16px 15px;
+}
+.top-menu ul li a:hover{
+    background-color: black;
+   
+}
+
+/* submenu */
+.top-menu ul ul{
+    display: none;
+    position: absolute;
+    background-color: #EEEEEE;
+}
+
+.top-menu li:hover ul{
+    display: block;
+    width: 170px;
+}
+.top-menu li:hover ul li{
+    display: block;
+    text-align: left;
+    font-size: 12px;
+}
+.top-menu li:hover ul li a{
+   color: black;
+}
+.top-menu li:hover ul li a:hover{
+    background-color: #2880E3;
+    color: white;
+ }
+ 
+
+
+
+
 .btn{
     display: inline-block;
     background-color: #cccccc;
@@ -47,6 +104,4 @@ body{
 i.icon-sm{
     font-size: 15px;
 }
-.top-logo img{
-    width: 100px;
-}
+
